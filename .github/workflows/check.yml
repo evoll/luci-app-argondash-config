@@ -1,0 +1,235 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - 'v*'
+    # BUG FIX: removed paths filter 'luci-app-argondash-config/**'
+    # The package files live at the repo root, so that path prefix never
+    # matched any file and CI never triggered on push. Omitting the filter
+    # lets GitHub Actions use the default (all paths).
+  pull_request:
+    branches:
+      - main
+
+env:
+  TZ: Europe/Moscow
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    name: Build for OpenWrt ${{ matrix.openwrt_version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+
+          # ── 23.05.x ── стабильная, opkg/ipk ──────────
+          - openwrt_version: "23.05"
+            branch_prefix: "23.05"
+            is_snapshot: "false"
+            pkg_ext: "ipk"
+            version_label: "23.05.x"
+            feeds_base:     "https://github.com/openwrt/openwrt.git;openwrt-23.05"
+            feeds_packages: "https://github.com/openwrt/packages.git;openwrt-23.05"
+            feeds_luci:     "https://github.com/openwrt/luci.git;openwrt-23.05"
+
+          # ── 24.10.x ── стабильная, opkg/ipk ──────────
+          - openwrt_version: "24.10"
+            branch_prefix: "24.10"
+            is_snapshot: "false"
+            pkg_ext: "ipk"
+            version_label: "24.10.x"
+            feeds_base:     "https://github.com/openwrt/openwrt.git;openwrt-24.10"
+            feeds_packages: "https://github.com/openwrt/packages.git;openwrt-24.10"
+            feeds_luci:     "https://github.com/openwrt/luci.git;openwrt-24.10"
+
+          # ── 25.12.x ── стабильная, apk ────────────────
+          - openwrt_version: "25.12"
+            branch_prefix: "25.12"
+            is_snapshot: "false"
+            pkg_ext: "apk"
+            version_label: "25.12.x"
+            feeds_base:     "https://github.com/openwrt/openwrt.git;openwrt-25.12"
+            feeds_packages: "https://github.com/openwrt/packages.git;openwrt-25.12"
+            feeds_luci:     "https://github.com/openwrt/luci.git;openwrt-25.12"
+
+          # ── snapshot ── нестабильная, apk, без кэша ───
+          - openwrt_version: "snapshot"
+            branch_prefix: ""
+            is_snapshot: "true"
+            pkg_ext: "apk"
+            version_label: "Snap"
+            feeds_base:     "https://github.com/openwrt/openwrt.git;main"
+            feeds_packages: "https://github.com/openwrt/packages.git;master"
+            feeds_luci:     "https://github.com/openwrt/luci.git;master"
+
+    steps:
+      # BUG FIX: removed 'ref: main' override.
+      # With ref: main, pull_request builds always checked out the main branch
+      # instead of the PR's head commit — changes in a PR were never tested.
+      - uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo -E apt-get -qq update
+          sudo -E apt-get -qq install \
+            zstd build-essential clang flex bison g++ gawk \
+            gcc-multilib g++-multilib gettext git \
+            libncurses5-dev libssl-dev python3-venv \
+            rsync unzip zlib1g-dev file wget
+          sudo -E apt-get -qq autoremove --purge
+          sudo -E apt-get -qq clean
+
+      - name: Resolve SDK URL
+        id: resolve-sdk
+        run: |
+          INDEX_BASE="https://downloads.openwrt.org"
+
+          if [ "${{ matrix.is_snapshot }}" = "true" ]; then
+            INDEX_URL="${INDEX_BASE}/snapshots/targets/x86/64/"
+            CACHE_KEY=""
+          else
+            LATEST=$(wget -qO- "${INDEX_BASE}/releases/" \
+              | grep -oP 'href="\K${{ matrix.branch_prefix }}\.[0-9]+(?=/")' \
+              | sort -V | tail -1)
+            if [ -z "${LATEST}" ]; then
+              echo "ERROR: не удалось найти релиз для ветки ${{ matrix.branch_prefix }}"
+              exit 1
+            fi
+            echo "Найден последний релиз: ${LATEST}"
+            INDEX_URL="${INDEX_BASE}/releases/${LATEST}/targets/x86/64/"
+            CACHE_KEY="sdk-${LATEST}-x86-64"
+          fi
+
+          SDK_FILE=$(wget -qO- "${INDEX_URL}" \
+            | grep -oP 'openwrt-sdk[^"<> ]+\.tar\.(zst|xz)' \
+            | sort -u | head -1)
+          if [ -z "${SDK_FILE}" ]; then
+            echo "ERROR: файл SDK не найден в ${INDEX_URL}"
+            exit 1
+          fi
+
+          SDK_URL="${INDEX_URL}${SDK_FILE}"
+          [[ "${SDK_FILE}" == *.tar.xz ]] && SDK_FORMAT="xz" || SDK_FORMAT="zst"
+
+          echo "SDK_URL=${SDK_URL}"       >> $GITHUB_ENV
+          echo "SDK_FORMAT=${SDK_FORMAT}" >> $GITHUB_ENV
+          echo "CACHE_KEY=${CACHE_KEY}"   >> $GITHUB_ENV
+          echo "  File  : ${SDK_FILE}"
+          echo "  URL   : ${SDK_URL}"
+          echo "  Cache : ${CACHE_KEY:-<no cache>}"
+
+      - name: Cache OpenWrt SDK (${{ matrix.openwrt_version }})
+        id: cache-sdk
+        if: env.CACHE_KEY != ''
+        uses: actions/cache@v4
+        with:
+          path: sdk
+          key: ${{ env.CACHE_KEY }}
+
+      - name: Download and unpack SDK
+        if: env.CACHE_KEY == '' || steps.cache-sdk.outputs.cache-hit != 'true'
+        run: |
+          wget -q "${SDK_URL}"
+          archive=$(basename "${SDK_URL}")
+          mkdir -p sdk
+          if [ "${SDK_FORMAT}" = "zst" ]; then
+            tar --zstd -xf "${archive}" -C ./sdk --strip-components=1
+          else
+            tar -xf "${archive}" -C ./sdk --strip-components=1
+          fi
+
+      - name: Setup feeds
+        if: env.CACHE_KEY == '' || steps.cache-sdk.outputs.cache-hit != 'true'
+        run: |
+          cd sdk
+          {
+            echo "src-git base     ${{ matrix.feeds_base }}"
+            echo "src-git packages ${{ matrix.feeds_packages }}"
+            echo "src-git luci     ${{ matrix.feeds_luci }}"
+          } > feeds.conf
+
+          ./scripts/feeds update -a
+
+      # Кладём исходники пакета напрямую в SDK package/, минуя feeds-механизм.
+      # Это надёжнее: feeds.conf и feeds/ кэшируются вместе с sdk/, и любые
+      # стейл-данные оттуда вызывают плохо диагностируемые ошибки парсинга.
+      # OpenWrt-сборщик сканирует package/ рекурсивно — никаких регистраций
+      # в feeds.conf для пакета не требуется.
+      - name: Install package
+        run: |
+          cd sdk
+          git clone https://github.com/${{ github.repository }}.git /tmp/argondash-source
+          git -C /tmp/argondash-source checkout ${{ github.sha }}
+          rm -rf package/luci-app-argondash-config
+          cp -r /tmp/argondash-source package/luci-app-argondash-config
+          rm -rf package/luci-app-argondash-config/.git \
+                 package/luci-app-argondash-config/.github
+          test -f package/luci-app-argondash-config/Makefile
+
+      - name: Configure build
+        run: |
+          cd sdk
+          ./scripts/feeds install luci-base
+          cat > .config << 'EOF'
+          CONFIG_ALL_NONSHARED=n
+          CONFIG_ALL_KMODS=n
+          CONFIG_ALL=n
+          CONFIG_AUTOREMOVE=n
+          CONFIG_PACKAGE_luci-app-argondash-config=m
+          EOF
+          make defconfig
+
+      - name: Compile
+        id: compile
+        run: |
+          cd sdk
+          make package/luci-app-argondash-config/clean   -j$(nproc) V=s
+          make package/luci-app-argondash-config/compile -j$(nproc) V=s BUILD_LOG=1
+          mkdir -p ../output
+          find bin/packages/ -name 'luci-app-argondash-config*.${{ matrix.pkg_ext }}' \
+            -exec cp {} ../output/ \;
+          # Читаем PKG_RELEASE из Makefile пакета
+          PKG_REL=$(grep -oP 'PKG_RELEASE:=\K.*' \
+            package/luci-app-argondash-config/Makefile 2>/dev/null || echo "1")
+          # Переименовываем: вставляем метку версии OpenWrt в имя файла
+          # С ревизией:    _1.0.1-r20260314_all.ipk → _1.0.1-24.10.x_r20260314.ipk
+          # Без ревизии:   _1.0.1_all.ipk           → _1.0.1-23.05.x_r1.ipk
+          for f in ../output/luci-app-argondash-config*.${{ matrix.pkg_ext }}; do
+            [ -f "$f" ] || continue
+            base=$(basename "$f")
+            if echo "$base" | grep -q '\-r[0-9]'; then
+              # ревизия уже есть в имени — только вставляем метку версии
+              newname=$(echo "$base" | sed \
+                -e 's/-r\([0-9]\)/-${{ matrix.version_label }}_r\1/' \
+                -e 's/_all\././')
+            else
+              # ревизии нет — вставляем метку версии и PKG_RELEASE
+              newname=$(echo "$base" | sed \
+                -e 's/_all\././' \
+                -e "s/\.\(ipk\|apk\)\$/-${{ matrix.version_label }}_r${PKG_REL}.\1/")
+            fi
+            mv "$f" "../output/${newname}"
+          done
+          echo "status=success" >> $GITHUB_OUTPUT
+
+      - name: Upload package
+        if: steps.compile.outputs.status == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: luci-app-argondash-config-openwrt${{ matrix.openwrt_version }}
+          path: output/luci-app-argondash-config*.${{ matrix.pkg_ext }}
+          if-no-files-found: error
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: buildlog-openwrt${{ matrix.openwrt_version }}
+          path: output/buildlog-${{ matrix.pkg_ext }}.tar.xz
+          if-no-files-found: ignore

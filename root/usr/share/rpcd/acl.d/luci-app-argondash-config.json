@@ -1,0 +1,23 @@
+{
+	"luci-app-argondash-config": {
+		"description": "Grant UCI access for luci-app-argondash-config",
+		"read": {
+			"file": {
+				"/www/luci-static/argondash/background/*": [ "list" ]
+			},
+			"ubus": {
+				"luci.argondash": [ "avail" ]
+			},
+			"uci": [ "argondash" ]
+		},
+		"write": {
+			"file": {
+				"/tmp/argondash_background.tmp": [ "write" ]
+			},
+			"ubus": {
+				"luci.argondash": [ "remove", "rename" ]
+			},
+			"uci": [ "argondash" ]
+		}
+	}
+}

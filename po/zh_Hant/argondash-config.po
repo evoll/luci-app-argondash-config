@@ -1,0 +1,219 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+""
+
+#: applications/luci-app-argondash-config/root/usr/share/luci/menu.d/luci-app-argondash-config.json:3
+msgid "ArgonDash Config"
+msgstr "ArgonDash 主題設定"
+
+#: applications/luci-app-argondash-config/root/usr/share/rpcd/acl.d/luci-app-argondash-config.json:3
+msgid "Grant UCI access for luci-app-argondash-config"
+msgstr "授予 luci-app-argondash-config 存取 UCI 設定的權限"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:35
+msgid "Expecting: %s"
+msgstr "請輸入：%s"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:35
+msgid "valid HEX color value"
+msgstr "有效十六進位色彩值"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:54
+msgid "ArgonDash Theme Configuration"
+msgstr "ArgonDash 主題設定"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:55
+msgid "Configure the ArgonDash theme appearance. Changes take effect on the next page load."
+msgstr "配置 ArgonDash 主題外觀，變更於下次頁面載入時生效。"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:58
+msgid "General"
+msgstr "基本設定"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:62
+msgid "Theme mode"
+msgstr "主題模式"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:63
+msgid "Follow system (auto dark/light)"
+msgstr "跟隨系統（自動深色/淺色）"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:64
+msgid "Always light"
+msgstr "永遠淺色"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:65
+msgid "Always dark"
+msgstr "永遠深色"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:69
+msgid "Login wallpaper source"
+msgstr "登入頁桌布來源"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:70
+msgid "Built-in (local files only)"
+msgstr "內建（僅本地檔案）"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:71
+msgid "Bing daily photo"
+msgstr "Bing 每日圖片"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:72
+msgid "Unsplash (requires API key)"
+msgstr "Unsplash（需要 API 金鑰）"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:73
+msgid "Wallhaven"
+msgstr "Wallhaven"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:78
+msgid "Light Mode"
+msgstr "淺色模式"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:82
+msgid "Primary color"
+msgstr "主色調"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:83
+msgid "Accent color for buttons, active nav items, and highlights. Default: #5e72e4"
+msgstr "用於按鈕、活躍導覽項目和高亮的強調色。預設：#5e72e4"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:88
+msgid "Login panel transparency"
+msgstr "登入面板透明度"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:89
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:113
+msgid "0 = fully transparent · 1 = fully opaque (default: 0.5)"
+msgstr "0 = 完全透明 · 1 = 完全不透明（預設：0.5）"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:95
+msgid "Login panel blur radius"
+msgstr "登入面板模糊半徑"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:96
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:120
+msgid "Frosted glass blur in pixels. 0 = no blur · 10 = default."
+msgstr "磨砂玻璃模糊半徑（像素）。0 = 不模糊 · 10 = 預設。"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:102
+msgid "Dark Mode"
+msgstr "深色模式"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:106
+msgid "Dark mode primary color"
+msgstr "深色模式主色調"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:107
+msgid "Accent color used in dark mode. Default: #344675"
+msgstr "深色模式下使用的強調色。預設：#344675"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:112
+msgid "Dark mode panel transparency"
+msgstr "深色模式面板透明度"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:119
+msgid "Dark mode blur radius"
+msgstr "深色模式模糊半徑"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:126
+msgid "Sidebar & Page Banner"
+msgstr "側邊欄與頁面橫幅"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:127
+msgid "Gradient colors for the dark sidebar navigation and the header banner strip (Argon Dashboard 2 style). Values are injected as CSS variables --sidebar-bg-from/to and --page-banner-from/to."
+msgstr "深色側邊欄導覽和頁面頂部橫幅條的漸層顏色（Argon Dashboard 2 風格）。作為 CSS 變數 --sidebar-bg-from/to 和 --page-banner-from/to 注入。"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:131
+msgid "Sidebar gradient — top color"
+msgstr "側邊欄漸層 — 頂部顏色"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:132
+msgid "Default: #42424a"
+msgstr "預設：#42424a"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:137
+msgid "Sidebar gradient — bottom color"
+msgstr "側邊欄漸層 — 底部顏色"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:138
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:150
+msgid "Default: #191919"
+msgstr "預設：#191919"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:143
+msgid "Page banner gradient — top color"
+msgstr "頁面橫幅漸層 — 頂部顏色"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:144
+msgid "Dark strip behind stat cards on each page. Default: #42424a"
+msgstr "每頁統計卡片後方的深色條。預設：#42424a"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:149
+msgid "Page banner gradient — bottom color"
+msgstr "頁面橫幅漸層 — 底部顏色"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:155
+msgid "Save settings"
+msgstr "儲存設定"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:157
+msgid "Save & apply"
+msgstr "儲存並套用"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:165
+msgid "Login Background Files (available: %1024.2mB)"
+msgstr "登入頁背景檔案（可用：%1024.2mB）"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:166
+msgid "Upload jpg / png / gif / webp / mp4 / webm. Stored in <code>%s</code>. Displayed randomly on the login page."
+msgstr "上傳 jpg / png / gif / webp / mp4 / webm。存儲於 <code>%s</code>，隨機顯示於登入頁。"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:171
+msgid "Upload background file"
+msgstr "上傳背景檔案"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:173
+msgid "Choose file..."
+msgstr "選擇檔案..."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:180
+msgid "Failed to upload file: %s."
+msgstr "上傳檔案失敗：%s。"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:192
+msgid "Filename"
+msgstr "檔案名稱"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:193
+msgid "Modified"
+msgstr "修改時間"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:194
+msgid "Size"
+msgstr "大小"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:195
+msgid "Action"
+msgstr "操作"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:210
+msgid "Delete"
+msgstr "刪除"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:212
+msgid "No background files uploaded yet."
+msgstr "尚無上傳的背景檔案。"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:215
+msgid "Uploaded backgrounds"
+msgstr "已上傳背景"
+
+msgid "Unsplash API key"
+msgstr ""
+
+msgid "Required when Unsplash is selected. Obtain a free key at unsplash.com/developers."
+msgstr ""

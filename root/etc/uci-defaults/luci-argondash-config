@@ -1,0 +1,28 @@
+#!/bin/sh
+# Migration script: runs once at first boot after package install (uci-defaults mechanism).
+
+changed=0
+
+# Migrate v1.0.x: 'bing_background' → 'online_wallpaper'
+bing_background="$(uci -q get "argondash.@global[0].bing_background")"
+if [ -n "$bing_background" ]; then
+	if [ "$bing_background" = "1" ]; then
+		uci -q set "argondash.@global[0].online_wallpaper=bing"
+	else
+		uci -q set "argondash.@global[0].online_wallpaper=none"
+	fi
+	uci -q delete "argondash.@global[0].bing_background"
+	changed=1
+fi
+
+# Migrate v1.1.0: 'unsplash_key' → 'use_api_key' (wrong name in that release)
+unsplash_key="$(uci -q get "argondash.@global[0].unsplash_key")"
+if [ -n "$unsplash_key" ]; then
+	uci -q set "argondash.@global[0].use_api_key=$unsplash_key"
+	uci -q delete "argondash.@global[0].unsplash_key"
+	changed=1
+fi
+
+[ $changed = 1 ] && uci -q commit "argondash"
+
+exit 0

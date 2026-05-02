@@ -1,0 +1,219 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+""
+
+#: applications/luci-app-argondash-config/root/usr/share/luci/menu.d/luci-app-argondash-config.json:3
+msgid "ArgonDash Config"
+msgstr "Configuração ArgonDash"
+
+#: applications/luci-app-argondash-config/root/usr/share/rpcd/acl.d/luci-app-argondash-config.json:3
+msgid "Grant UCI access for luci-app-argondash-config"
+msgstr "Conceder acesso UCI para luci-app-argondash-config"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:35
+msgid "Expecting: %s"
+msgstr "Esperado: %s"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:35
+msgid "valid HEX color value"
+msgstr "valor de cor HEX válido"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:54
+msgid "ArgonDash Theme Configuration"
+msgstr "Configuração do tema ArgonDash"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:55
+msgid "Configure the ArgonDash theme appearance. Changes take effect on the next page load."
+msgstr "Configure a aparência do tema ArgonDash. As alterações entram em vigor no próximo carregamento de página."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:58
+msgid "General"
+msgstr "Geral"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:62
+msgid "Theme mode"
+msgstr "Modo do tema"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:63
+msgid "Follow system (auto dark/light)"
+msgstr "Seguir sistema (escuro/claro automático)"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:64
+msgid "Always light"
+msgstr "Sempre claro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:65
+msgid "Always dark"
+msgstr "Sempre escuro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:69
+msgid "Login wallpaper source"
+msgstr "Fonte do papel de parede da página de login"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:70
+msgid "Built-in (local files only)"
+msgstr "Integrado (apenas arquivos locais)"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:71
+msgid "Bing daily photo"
+msgstr "Foto diária do Bing"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:72
+msgid "Unsplash (requires API key)"
+msgstr "Unsplash (requer chave API)"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:73
+msgid "Wallhaven"
+msgstr "Wallhaven"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:78
+msgid "Light Mode"
+msgstr "Modo claro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:82
+msgid "Primary color"
+msgstr "Cor primária"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:83
+msgid "Accent color for buttons, active nav items, and highlights. Default: #5e72e4"
+msgstr "Cor de destaque para botões, itens de navegação ativos e realces. Padrão: #5e72e4"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:88
+msgid "Login panel transparency"
+msgstr "Transparência do painel de login"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:89
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:113
+msgid "0 = fully transparent · 1 = fully opaque (default: 0.5)"
+msgstr "0 = totalmente transparente · 1 = totalmente opaco (padrão: 0.5)"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:95
+msgid "Login panel blur radius"
+msgstr "Raio de desfoque do painel de login"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:96
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:120
+msgid "Frosted glass blur in pixels. 0 = no blur · 10 = default."
+msgstr "Desfoque de vidro fosco em pixels. 0 = sem desfoque · 10 = padrão."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:102
+msgid "Dark Mode"
+msgstr "Modo escuro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:106
+msgid "Dark mode primary color"
+msgstr "Cor primária do modo escuro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:107
+msgid "Accent color used in dark mode. Default: #344675"
+msgstr "Cor de destaque usada no modo escuro. Padrão: #344675"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:112
+msgid "Dark mode panel transparency"
+msgstr "Transparência do painel no modo escuro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:119
+msgid "Dark mode blur radius"
+msgstr "Raio de desfoque no modo escuro"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:126
+msgid "Sidebar & Page Banner"
+msgstr "Barra lateral e banner da página"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:127
+msgid "Gradient colors for the dark sidebar navigation and the header banner strip (Argon Dashboard 2 style). Values are injected as CSS variables --sidebar-bg-from/to and --page-banner-from/to."
+msgstr "Cores de gradiente para a barra lateral escura e a faixa do banner do cabeçalho (estilo Argon Dashboard 2). Injetados como variáveis CSS --sidebar-bg-from/to e --page-banner-from/to."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:131
+msgid "Sidebar gradient — top color"
+msgstr "Gradiente da barra lateral — cor superior"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:132
+msgid "Default: #42424a"
+msgstr "Padrão: #42424a"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:137
+msgid "Sidebar gradient — bottom color"
+msgstr "Gradiente da barra lateral — cor inferior"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:138
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:150
+msgid "Default: #191919"
+msgstr "Padrão: #191919"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:143
+msgid "Page banner gradient — top color"
+msgstr "Gradiente do banner da página — cor superior"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:144
+msgid "Dark strip behind stat cards on each page. Default: #42424a"
+msgstr "Faixa escura atrás dos cartões de estatísticas. Padrão: #42424a"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:149
+msgid "Page banner gradient — bottom color"
+msgstr "Gradiente do banner da página — cor inferior"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:155
+msgid "Save settings"
+msgstr "Salvar configurações"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:157
+msgid "Save & apply"
+msgstr "Salvar e aplicar"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:165
+msgid "Login Background Files (available: %1024.2mB)"
+msgstr "Arquivos de fundo da página de login (disponível: %1024.2mB)"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:166
+msgid "Upload jpg / png / gif / webp / mp4 / webm. Stored in <code>%s</code>. Displayed randomly on the login page."
+msgstr "Envie jpg / png / gif / webp / mp4 / webm. Armazenados em <code>%s</code>. Exibidos aleatoriamente na página de login."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:171
+msgid "Upload background file"
+msgstr "Enviar arquivo de fundo"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:173
+msgid "Choose file..."
+msgstr "Escolher arquivo..."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:180
+msgid "Failed to upload file: %s."
+msgstr "Falha ao enviar arquivo: %s."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:192
+msgid "Filename"
+msgstr "Nome do arquivo"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:193
+msgid "Modified"
+msgstr "Modificado"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:194
+msgid "Size"
+msgstr "Tamanho"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:195
+msgid "Action"
+msgstr "Ação"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:210
+msgid "Delete"
+msgstr "Excluir"
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:212
+msgid "No background files uploaded yet."
+msgstr "Nenhum arquivo de fundo enviado ainda."
+
+#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:215
+msgid "Uploaded backgrounds"
+msgstr "Fundos enviados"
+
+msgid "Unsplash API key"
+msgstr ""
+
+msgid "Required when Unsplash is selected. Obtain a free key at unsplash.com/developers."
+msgstr ""

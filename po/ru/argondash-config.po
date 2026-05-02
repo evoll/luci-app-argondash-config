@@ -1,0 +1,185 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "ArgonDash Config"
+msgstr "Настройки темы ArgonDash"
+
+msgid "Grant UCI access for luci-app-argondash-config"
+msgstr "Предоставить доступ к UCI для luci-app-argondash-config"
+
+msgid "Expecting: %s"
+msgstr "Ожидалось: %s"
+
+msgid "valid HEX color value"
+msgstr "корректное значение HEX-цвета"
+
+msgid "ArgonDash Theme Configuration"
+msgstr "Конфигурация темы ArgonDash"
+
+msgid "Configure the ArgonDash theme appearance. Changes take effect on the next page load."
+msgstr "Настройте внешний вид темы ArgonDash. Изменения вступят в силу при следующей загрузке страницы."
+
+msgid "General"
+msgstr "Основные"
+
+msgid "Theme mode"
+msgstr "Режим темы"
+
+msgid "Follow system (auto dark/light)"
+msgstr "Как в системе (авто тёмный/светлый)"
+
+msgid "Always light"
+msgstr "Всегда светлая"
+
+msgid "Always dark"
+msgstr "Всегда тёмная"
+
+msgid "Login wallpaper source"
+msgstr "Источник обоев страницы входа"
+
+msgid "Built-in (local files only)"
+msgstr "Встроенные (только локальные файлы)"
+
+msgid "Bing daily photo"
+msgstr "Фото дня Bing"
+
+msgid "Unsplash"
+msgstr "Unsplash"
+
+msgid "Wallhaven"
+msgstr "Wallhaven"
+
+msgid "Wallhaven tag ID (optional)"
+msgstr "ID тега Wallhaven (необязательно)"
+
+msgid "Leave empty for random wallpapers. Enter a Wallhaven tag ID (numeric) for a specific category."
+msgstr "Оставьте пустым для случайных обоев. Введите числовой ID тега Wallhaven для конкретной категории."
+
+msgid "Unsplash collection ID (optional)"
+msgstr "ID коллекции Unsplash (необязательно)"
+
+msgid "Leave empty for a random Unsplash photo. Enter a collection ID to restrict to a specific collection."
+msgstr "Оставьте пустым для случайного фото. Введите ID коллекции для ограничения выборки."
+
+msgid "API key"
+msgstr "API-ключ"
+
+msgid "Unsplash: required client_id (get one free at unsplash.com/developers). Wallhaven: optional API key for NSFW content or higher rate limits."
+msgstr "Unsplash: обязательный client_id (бесплатно на unsplash.com/developers). Wallhaven: необязательный API-ключ для контента 18+ или повышенных лимитов."
+
+msgid "Wallhaven: exact resolution"
+msgstr "Wallhaven: точное разрешение"
+
+msgid "Match wallpapers to exactly 1920x1080. When disabled, \"at least\" matching is used (more results)."
+msgstr "Отбирать обои с разрешением ровно 1920×1080. При отключении используется фильтр «не менее» (больше результатов)."
+
+msgid "Light Mode"
+msgstr "Светлая тема"
+
+msgid "Primary color"
+msgstr "Основной цвет"
+
+msgid "Accent color for buttons, active nav items, and highlights. Injected as CSS variable --primary. Default: #5e72e4"
+msgstr "Акцентный цвет для кнопок, активных пунктов меню и выделений. CSS-переменная --primary. По умолчанию: #5e72e4"
+
+msgid "Login panel transparency"
+msgstr "Прозрачность панели входа"
+
+msgid "Sets CSS variable --blur-opacity on logged-in pages. 0 = fully transparent · 1 = fully opaque (default: 0.5)"
+msgstr "Устанавливает CSS-переменную --blur-opacity на страницах после входа. 0 — полностью прозрачно · 1 — непрозрачно (по умолчанию: 0.5)"
+
+msgid "Login panel blur radius"
+msgstr "Радиус размытия панели входа"
+
+msgid "Sets CSS variable --blur-radius on logged-in pages, in pixels. 0 = no blur · 10 = default."
+msgstr "Устанавливает CSS-переменную --blur-radius на страницах после входа, в пикселях. 0 — без размытия · 10 — по умолчанию."
+
+msgid "Dark Mode"
+msgstr "Тёмная тема"
+
+msgid "Dark mode primary color"
+msgstr "Основной цвет тёмной темы"
+
+msgid "Accent color used in dark mode. Injected as CSS variable --dark-primary. Default: #344675"
+msgstr "Акцентный цвет в тёмном режиме. CSS-переменная --dark-primary. По умолчанию: #344675"
+
+msgid "Dark mode panel transparency"
+msgstr "Прозрачность панели в тёмной теме"
+
+msgid "Sets CSS variable --blur-opacity-dark. 0 = fully transparent · 1 = fully opaque (default: 0.5)"
+msgstr "Устанавливает CSS-переменную --blur-opacity-dark. 0 — прозрачно · 1 — непрозрачно (по умолчанию: 0.5)"
+
+msgid "Dark mode blur radius"
+msgstr "Радиус размытия в тёмной теме"
+
+msgid "Sets CSS variable --blur-radius-dark, in pixels. 0 = no blur · 10 = default."
+msgstr "Устанавливает CSS-переменную --blur-radius-dark, в пикселях. 0 — без размытия · 10 — по умолчанию."
+
+msgid "Sidebar & Page Banner"
+msgstr "Боковая панель и заголовок страницы"
+
+msgid "Gradient colors for the dark sidebar navigation and the header banner strip (Argon Dashboard 2 style). Injected as CSS variables --sidebar-bg-from/to and --page-banner-from/to."
+msgstr "Цвета градиента тёмной навигационной панели и полосы заголовка страницы (стиль Argon Dashboard 2). CSS-переменные --sidebar-bg-from/to и --page-banner-from/to."
+
+msgid "Sidebar gradient — top color"
+msgstr "Градиент панели — верхний цвет"
+
+msgid "Default: #42424a"
+msgstr "По умолчанию: #42424a"
+
+msgid "Sidebar gradient — bottom color"
+msgstr "Градиент панели — нижний цвет"
+
+msgid "Default: #191919"
+msgstr "По умолчанию: #191919"
+
+msgid "Page banner gradient — top color"
+msgstr "Градиент заголовка — верхний цвет"
+
+msgid "Dark strip behind stat cards on each page. Default: #42424a"
+msgstr "Тёмная полоса за карточками статистики на каждой странице. По умолчанию: #42424a"
+
+msgid "Page banner gradient — bottom color"
+msgstr "Градиент заголовка — нижний цвет"
+
+msgid "Save settings"
+msgstr "Сохранить настройки"
+
+msgid "Save & apply"
+msgstr "Сохранить и применить"
+
+msgid "Login Background Files (available: %1024.2mB)"
+msgstr "Фоновые файлы страницы входа (доступно: %1024.2mB)"
+
+msgid "Upload jpg / png / gif / webp / mp4 / webm. Stored in <code>%s</code>. Displayed randomly on the login page."
+msgstr "Загрузите jpg / png / gif / webp / mp4 / webm. Хранится в <code>%s</code>. Случайно отображается на странице входа."
+
+msgid "Upload background file"
+msgstr "Загрузить фоновый файл"
+
+msgid "Choose file..."
+msgstr "Выбрать файл..."
+
+msgid "Failed to upload file: %s."
+msgstr "Не удалось загрузить файл: %s."
+
+msgid "Filename"
+msgstr "Имя файла"
+
+msgid "Modified"
+msgstr "Изменён"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "No background files uploaded yet."
+msgstr "Фоновые файлы ещё не загружены."
+
+msgid "Uploaded backgrounds"
+msgstr "Загруженные фоны"

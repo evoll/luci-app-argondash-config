@@ -1,0 +1,14 @@
+{
+	"admin/system/argondash-config": {
+		"title": "ArgonDash Config",
+		"order": 90,
+		"action": {
+			"type": "view",
+			"path": "argondash-config"
+		},
+		"depends": {
+			"acl": [ "luci-app-argondash-config" ],
+			"uci": { "argondash": true }
+		}
+	}
+}
