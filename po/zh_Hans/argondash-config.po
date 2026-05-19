@@ -62,12 +62,36 @@ msgid "Bing daily photo"
 msgstr "Bing 每日图片"
 
 #: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:72
-msgid "Unsplash (requires API key)"
-msgstr "Unsplash（需要 API 密钥）"
+msgid "Unsplash"
+msgstr "Unsplash"
 
 #: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:73
 msgid "Wallhaven"
 msgstr "Wallhaven"
+
+msgid "Wallhaven tag ID (optional)"
+msgstr "Wallhaven 标签 ID（可选）"
+
+msgid "Leave empty for random wallpapers. Enter a Wallhaven tag ID (numeric) for a specific category."
+msgstr "留空随机壁纸，输入 Wallhaven 标签 ID（数字）可指定分类。"
+
+msgid "Unsplash collection ID (optional)"
+msgstr "Unsplash 合集 ID（可选）"
+
+msgid "Leave empty for a random Unsplash photo. Enter a collection ID to restrict to a specific collection."
+msgstr "留空随机图片，输入合集 ID 可限定到特定合集。"
+
+msgid "API key"
+msgstr "API 密钥"
+
+msgid "Unsplash: required client_id (get one free at unsplash.com/developers). Wallhaven: optional API key for NSFW content or higher rate limits."
+msgstr "Unsplash：必填 client_id（在 unsplash.com/developers 免费申请）。Wallhaven：可选，用于 NSFW 内容或提高速率限制。"
+
+msgid "Wallhaven: exact resolution"
+msgstr "Wallhaven：精确分辨率"
+
+msgid "Match wallpapers to exactly 1920x1080. When disabled, \"at least\" matching is used (more results)."
+msgstr "精确匹配 1920x1080 分辨率。禁用时使用"至少"匹配（结果更多）。"
 
 #: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:78
 msgid "Light Mode"
@@ -75,57 +99,50 @@ msgstr "浅色模式"
 
 #: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:82
 msgid "Primary color"
-msgstr "主色调"
+msgstr "主颜色"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:83
-msgid "Accent color for buttons, active nav items, and highlights. Default: #5e72e4"
-msgstr "用于按钮、活跃导航项和高亮的强调色。默认：#5e72e4"
+msgid "Accent color for buttons, active nav items, and highlights. Injected as CSS variable --primary. Default: #5e72e4"
+msgstr "用于按钮、活跃导航项和高亮的强调色。注入为 CSS 变量 --primary。默认：#5e72e4"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:88
 msgid "Login panel transparency"
 msgstr "登录面板透明度"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:89
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:113
-msgid "0 = fully transparent · 1 = fully opaque (default: 0.5)"
-msgstr "0 = 完全透明 · 1 = 完全不透明（默认：0.5）"
+msgid "Sets CSS variable --blur-opacity on logged-in pages. 0 = fully transparent · 1 = fully opaque (default: 0.5)"
+msgstr "设置已登录页面的 CSS 变量 --blur-opacity。0 = 完全透明 · 1 = 完全不透明（默认：0.5）"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:95
 msgid "Login panel blur radius"
 msgstr "登录面板模糊半径"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:96
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:120
-msgid "Frosted glass blur in pixels. 0 = no blur · 10 = default."
-msgstr "毛玻璃模糊半径（像素）。0 = 不模糊 · 10 = 默认。"
+msgid "Sets CSS variable --blur-radius on logged-in pages, in pixels. 0 = no blur · 10 = default."
+msgstr "设置已登录页面的 CSS 变量 --blur-radius，单位像素。0 = 不模糊 · 10 = 默认。"
 
 #: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:102
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:106
 msgid "Dark mode primary color"
 msgstr "深色模式主色调"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:107
-msgid "Accent color used in dark mode. Default: #344675"
-msgstr "深色模式下使用的强调色。默认：#344675"
+msgid "Accent color used in dark mode. Injected as CSS variable --dark-primary. Default: #344675"
+msgstr "深色模式下使用的强调色。注入为 CSS 变量 --dark-primary。默认：#344675"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:112
 msgid "Dark mode panel transparency"
 msgstr "深色模式面板透明度"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:119
+msgid "Sets CSS variable --blur-opacity-dark. 0 = fully transparent · 1 = fully opaque (default: 0.5)"
+msgstr "设置 CSS 变量 --blur-opacity-dark。0 = 完全透明 · 1 = 完全不透明（默认：0.5）"
+
 msgid "Dark mode blur radius"
 msgstr "深色模式模糊半径"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:126
+msgid "Sets CSS variable --blur-radius-dark, in pixels. 0 = no blur · 10 = default."
+msgstr "设置 CSS 变量 --blur-radius-dark，单位像素。0 = 不模糊 · 10 = 默认。"
+
 msgid "Sidebar & Page Banner"
 msgstr "侧边栏与页面横幅"
 
-#: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:127
-msgid "Gradient colors for the dark sidebar navigation and the header banner strip (Argon Dashboard 2 style). Values are injected as CSS variables --sidebar-bg-from/to and --page-banner-from/to."
-msgstr "深色侧边栏导航和页面顶部横幅条的渐变颜色（Argon Dashboard 2 风格）。作为 CSS 变量 --sidebar-bg-from/to 和 --page-banner-from/to 注入。"
+msgid "Gradient colors for the dark sidebar navigation and the header banner strip (Argon Dashboard 2 style). Injected as CSS variables --sidebar-bg-from/to and --page-banner-from/to."
+msgstr "深色侧边栏导航和页面顶部横幅条的渐变颜色（Argon Dashboard 2 风格）。注入为 CSS 变量 --sidebar-bg-from/to 和 --page-banner-from/to。"
 
 #: applications/luci-app-argondash-config/htdocs/luci-static/resources/view/argondash-config.js:131
 msgid "Sidebar gradient — top color"
@@ -212,8 +229,3 @@ msgstr "暂无上传的背景文件。"
 msgid "Uploaded backgrounds"
 msgstr "已上传背景"
 
-msgid "Unsplash API key"
-msgstr ""
-
-msgid "Required when Unsplash is selected. Obtain a free key at unsplash.com/developers."
-msgstr ""
